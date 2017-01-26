@@ -4,7 +4,7 @@
     <u>
         <p class="heading"> {{item.heading}}: </p>
     </u>
-    <p class="description" > {{item.description}} </p>
+    <p class="description"> {{item.description}} </p>
     <a (click)="remove(item)" class="remove">remove</a>
     <br>
     <br>
@@ -18,8 +18,8 @@
 
     <input (input)="data.heading=$event.target.value" placeholder="Heading" required=true>
     <br>
-    <textarea minlength="50" (input)="data.description=$event.target.value" placeholder="Description" cols="30"  rows="3" required=true></textarea>
+    <textarea minlength="50" (input)="data.description=$event.target.value" placeholder="Description" cols="30" rows="3" required=true></textarea>
     <br>
-    <button >Add</button>
+    <button (click)="submit">Add</button>
 
 </form>
