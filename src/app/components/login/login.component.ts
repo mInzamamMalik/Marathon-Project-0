@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FireService } from '../../providers/fire.service';
+import { PreloadingStrategy, Route, Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -8,7 +9,7 @@ import { FireService } from '../../providers/fire.service';
 })
 export class LoginComponent implements OnInit {
 
-    constructor(private fs: FireService) { }
+    constructor(private fs: FireService, private router: Router) { }
 
     ngOnInit() {
     }
@@ -27,7 +28,25 @@ export class LoginComponent implements OnInit {
             .then((user) => {
                 console.log("user: ", user);
                 if (user) {
-                    //check here user is student company or admin    
+                    this.fs.getData(user.uid)
+                        .subscribe(userData => {
+                            console.log("user data: ", userData);
+
+                            switch (userData.role) {
+                                case "admin":
+                                    this.router.navigate(['/admin-dashboard']);
+                                    break;
+                                case "user":
+                                    this.router.navigate(['/user-dahsboard']);
+                                    break;
+                                case "company":
+                                    this.router.navigate(['/company-dashboard']);
+                                    break;
+                                default:
+                                    alert("invalid user role");
+                            }
+
+                        });
                 }
             })
     }

@@ -34,7 +34,10 @@ export class FireService {
         // });
     }
 
-    setData(path, data): firebase.Promise<void> {        
+    setData(path, data): firebase.Promise<void> {
         return this.af.database.object('/' + path).set(data);
+    }
+    getData(path) {
+        return this.af.database.object('/' + path);
     }
 }
