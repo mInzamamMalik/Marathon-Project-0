@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
             .then((user) => {
                 console.log("user: ", user);
                 if (user) {
-                    this.fs.getData(user.uid)
+                    this.fs.getData("users/" + user.uid)
                         .subscribe(userData => {
                             console.log("user data: ", userData);
 

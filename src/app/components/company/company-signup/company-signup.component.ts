@@ -28,7 +28,7 @@ export class CompanySignupComponent implements OnInit {
                 console.log("user: ", user);
                 if (user != undefined) {
                     console.log("user created");
-                    this.fs.setData(user.uid, {
+                    this.fs.setData("users/"+user.uid, {
                         name: this.data.name,
                         email: user.auth.email,
                         role: this.data.role
