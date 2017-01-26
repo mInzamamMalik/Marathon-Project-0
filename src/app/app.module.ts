@@ -34,7 +34,7 @@ import { ViewResumeComponent } from './components/view-resume/view-resume.compon
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'posts', component: PostsComponent },
-
+    { path: 'view-resume', component: ViewResumeComponent },
     { path: 'admin-dashboard', component: AdminDashboardComponent },
 
     { path: 'user-signup', component: UserSignupComponent },
@@ -53,7 +53,7 @@ const appRoutes: Routes = [
     //     redirectTo: '/heroes',
     //     pathMatch: 'full'
     // },
-    { path: '**', component: LoginComponent }
+    // { path: '**', component: LoginComponent }
 ];
 
 export const firebaseConfig = {

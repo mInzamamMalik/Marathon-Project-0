@@ -1,3 +1,10 @@
-<p>
-  view-resume works!
-</p>
+<p> Student Resume: (if student have no resume this page will show nothing)</p>
+
+<div *ngFor="let item of resume | async" class="student">
+    <u>
+        <p class="heading"> {{item.heading}}: </p>
+    </u>
+    <p class="description"> {{item.description}} </p>
+    <br>
+    <br>
+</div>

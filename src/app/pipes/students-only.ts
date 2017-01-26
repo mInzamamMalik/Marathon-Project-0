@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class onlyStudents implements PipeTransform {
     transform(value) {
-        console.log("each value: " + value);
         if (!value) {
             return;
         } else {

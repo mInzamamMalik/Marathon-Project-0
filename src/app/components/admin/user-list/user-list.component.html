@@ -6,6 +6,7 @@
     <p><b>Name:</b> {{item.name}}</p>
     <p><b>Role:</b> {{item.role}}</p>
 
+    <button [routerLink]="['/view-resume', {uid: item.$key}]">View Resume</button>
     <button (click)="deleteUser(item)">Delete</button>
 
 </div>
