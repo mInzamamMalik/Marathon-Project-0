@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
 
 import { NgReduxModule } from 'ng2-redux';
 import { StoreModule } from './store'
@@ -46,6 +47,14 @@ const appRoutes: Routes = [
     { path: '**', component: LoginComponent }
 ];
 
+export const firebaseConfig = {
+    apiKey: "AIzaSyA7oL1XQpXGVAtgnY3S7rb1bZ4wHwnWdJU",
+    authDomain: "campus-c7a4c.firebaseapp.com",
+    databaseURL: "https://campus-c7a4c.firebaseio.com",
+    storageBucket: "campus-c7a4c.appspot.com",
+    messagingSenderId: "148754352997"
+};
+
 
 @NgModule({
     declarations: [
@@ -65,7 +74,9 @@ const appRoutes: Routes = [
         HttpModule,
         RouterModule.forRoot(appRoutes),
         NgReduxModule,
-        StoreModule
+        StoreModule,
+        AngularFireModule.initializeApp(firebaseConfig)
+
     ],
     providers: [],
     bootstrap: [AppComponent]
