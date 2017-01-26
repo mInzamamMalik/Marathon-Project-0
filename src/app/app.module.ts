@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -16,24 +17,52 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { CompanySignupComponent } from './components/company/company-signup/company-signup.component';
 import { CompanyDashboardComponent } from './components/company/company-dashboard/company-dashboard.component';
 
+
+const appRoutes: Routes = [
+    { path: 'login', component: LoginComponent },
+    { path: 'posts', component: PostsComponent },
+
+    { path: 'admin-dashboard', component: AdminDashboardComponent },
+
+    { path: 'user-signup', component: UserSignupComponent },
+    { path: 'user-dahsboard', component: UserDashboardComponent },
+    { path: 'user-profile', component: ProfileComponent },
+
+    { path: 'company-signup', component: CompanySignupComponent },
+    { path: 'company-dashboard', component: CompanyDashboardComponent },
+    // {
+    //     path: 'heroes',
+    //     component: HeroListComponent,
+    //     data: { title: 'Heroes List' }
+    // },
+    // {
+    //     path: '',
+    //     redirectTo: '/heroes',
+    //     pathMatch: 'full'
+    // },
+    { path: '**', component: LoginComponent }
+];
+
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    AdminDashboardComponent,
-    UserDashboardComponent,
-    CompanyDashboardComponent,
-    UserSignupComponent,
-    CompanySignupComponent,
-    PostsComponent,
-    ProfileComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        AdminDashboardComponent,
+        UserDashboardComponent,
+        CompanyDashboardComponent,
+        UserSignupComponent,
+        CompanySignupComponent,
+        PostsComponent,
+        ProfileComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        RouterModule.forRoot(appRoutes)
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
