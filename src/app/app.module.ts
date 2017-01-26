@@ -23,6 +23,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { CompanySignupComponent } from './components/company/company-signup/company-signup.component';
 import { CompanyDashboardComponent } from './components/company/company-dashboard/company-dashboard.component';
 
+import { ReversePipe } from './pipes/reverse';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -68,7 +69,8 @@ export const firebaseConfig = {
         UserSignupComponent,
         CompanySignupComponent,
         PostsComponent,
-        ProfileComponent
+        ProfileComponent,
+        ReversePipe
     ],
     imports: [
         BrowserModule,
