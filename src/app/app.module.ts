@@ -25,6 +25,7 @@ import { CompanyDashboardComponent } from './components/company/company-dashboar
 
 import { ReversePipe } from './pipes/reverse';
 import { onlyStudents } from './pipes/students-only';
+import { studentAndCompany } from './pipes/studentAndCompany-only';
 
 import { UserListComponent } from './components/admin/user-list/user-list.component';
 import { StudentsListComponent } from './components/company/students-list/students-list.component';
@@ -77,7 +78,8 @@ export const firebaseConfig = {
         UserListComponent,
         StudentsListComponent,
         ReversePipe,
-        onlyStudents
+        onlyStudents,
+        studentAndCompany
     ],
     imports: [
         BrowserModule,

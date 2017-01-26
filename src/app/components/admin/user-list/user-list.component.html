@@ -1,9 +1,11 @@
 <h3>Users and companies:</h3>
 
-<div *ngFor="let item of users | async | reverse " class="user">
+<div *ngFor="let item of users | async | reverse | studentAndCompany " class="user">
 
-    <p><b>Email</b>: {{item.email}}</p>
-    <p><b>Name</b>: {{item.name}}</p>
+    <p><b>Email:</b> {{item.email}}</p>
+    <p><b>Name:</b> {{item.name}}</p>
+    <p><b>Role:</b> {{item.role}}</p>
+
     <button (click)="deleteUser(item.$key)">Delete</button>
 
 </div>
