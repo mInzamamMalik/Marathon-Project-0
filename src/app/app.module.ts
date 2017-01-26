@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
+import { NgReduxModule } from 'ng2-redux';
 import { StoreModule } from './store'
 
 import { AppComponent } from './app.component';
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
         FormsModule,
         HttpModule,
         RouterModule.forRoot(appRoutes),
+        NgReduxModule,
         StoreModule
     ],
     providers: [],
