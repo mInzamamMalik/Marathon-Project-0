@@ -3,13 +3,13 @@
 <form action="">
 
     <label for="">Name:</label> <br/>
-    <input [value]="data.name" /> <br/>
+    <input (input)="data.name=$event.target.value" /> <br/>
 
     <label for="">Email:</label> <br/>
-    <input [value]="data.email" /> <br/>
+    <input (input)="data.email=$event.target.value" type="email" /> <br/>
 
     <label for="">Password:</label> <br/>
-    <input [value]="data.password" type="password" /> <br/>
+    <input (input)="data.password=$event.target.value" type="password" /> <br/>
 
     <button (click)="signupAsCompany()">Signup As Company</button>
 

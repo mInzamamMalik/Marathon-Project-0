@@ -2,11 +2,11 @@
 
 <form action="">
     <label for="">Email:</label> <br/>
-    <input [value]="data.email" /> <br/>
+    <input (input)="data.email=$event.target.value" type="email" /> <br/>
     <label for="">Password:</label> <br/>
-    <input [value]="data.password" type="password" /> <br/>
+    <input (input)="data.password=$event.target.value" type="password" /> <br/>
 
-    <button (click)="login() ">Login</button>
+    <button (click)="login()">Login</button>
 
     <p>dont have an account?</p>
     <p><a routerLink="/company-signup" routerLinkActive="active">Signup as Company </a></p>

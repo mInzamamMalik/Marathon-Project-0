@@ -22,16 +22,16 @@ export class FireService {
     }
     doSignup(email, password) {
         return this.af.auth.createUser({ email: email, password: password })
-            .catch((error: any) => {
-                console.log(error);
-            })
-            .then((user: any) => {
-                var user = JSON.parse(JSON.stringify(user))// removing prototypes and making it plain object
-                this.af.database.object('/users/' + user.uid).set(user);
-                console.log(user);
+        // .catch((error: any) => {
+        //     console.log(error);
+        // })
+        // .then((user: any) => {
+        //     var user = JSON.parse(JSON.stringify(user))// removing prototypes and making it plain object
+        //     this.af.database.object('/users/' + user.uid).set(user);
+        //     console.log(user);
 
-                this.router.navigate(['/login']);
-            });
+        //     this.router.navigate(['/login']);
+        // });
     }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FireService } from '../../../providers/fire.service';
 
 @Component({
     selector: 'app-user-signup',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSignupComponent implements OnInit {
 
-    constructor() { }
+    constructor(private fs: FireService) { }
 
     ngOnInit() {
     }
@@ -15,11 +16,24 @@ export class UserSignupComponent implements OnInit {
     data = {
         name: "",
         email: "",
-        password: ""
+        password: "",
+        role: "user"
     }
 
     signupAsStudent() {
-        //do signup here
+
+        console.log(this.data);
+        this.fs.doSignup(this.data.email, this.data.password)
+            .catch((error: any) => {
+                alert(error);
+                console.log(error);
+            })
+            .then((user) => {
+                console.log("user: ", user);
+                if (user) {
+                    //add data to firebase here    
+                }
+            })
     }
 
 }
