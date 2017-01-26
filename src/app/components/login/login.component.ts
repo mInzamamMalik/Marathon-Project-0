@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
                 console.log("user: ", user);
                 if (user) {
                     this.fs.getData("users/" + user.uid)
+                        .take(1)
                         .subscribe(userData => {
                             console.log("user data: ", userData);
 
@@ -45,7 +46,6 @@ export class LoginComponent implements OnInit {
                                 default:
                                     alert("invalid user role");
                             }
-
                         });
                 }
             })
