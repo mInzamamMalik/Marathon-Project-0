@@ -21,8 +21,10 @@ export class UserListComponent implements OnInit {
                 }
             }));
     }
-    deleteUser(key) {
-        console.log("key is: ", key);
-        //delete user here
+    deleteUser(user) {
+        console.log("key is: ", user.$key);
+        if (confirm("Are you sure to delete " + user.email + ": ")) {
+            this.fs.setData("users/" + user.$key, null);
+        }
     }
 }
