@@ -29,9 +29,12 @@ export class ViewResumeComponent implements OnInit {
         });
 
         this.resume
-        .catch(console.log)
-        .subscribe(data => {
-            console.log(data);
-        })
+            .catch(console.log)
+            .subscribe(data => {
+                console.log(data);
+                if (!data.length) {
+                    alert("this user have not created resume")
+                }
+            })
     }
 }
