@@ -18,8 +18,6 @@ export class FireService {
             {
                 provider: AuthProviders.Password,
                 method: AuthMethods.Password,
-            }).catch((error: any) => {
-                console.log(error);
             })
     }
     doSignup(email, password) {

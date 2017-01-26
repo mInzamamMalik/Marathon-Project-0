@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FireService } from '../../providers/fire.service';
 
 @Component({
     selector: 'app-login',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-    constructor() { }
+    constructor(private fs: FireService) { }
 
     ngOnInit() {
     }
@@ -18,7 +19,17 @@ export class LoginComponent implements OnInit {
     }
 
     login() {
-        //do login here
+        this.fs.doLogin(this.data.email, this.data.password)
+            .catch((error: any) => {
+                alert(error.code);
+                console.log(error);
+            })
+            .then((user) => {
+                console.log("user: ", user);
+                if (user) {
+                    //check here user is student company or admin    
+                }
+            })
     }
 
 }

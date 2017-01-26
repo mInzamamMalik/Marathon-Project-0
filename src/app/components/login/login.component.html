@@ -4,9 +4,9 @@
     <label for="">Email:</label> <br/>
     <input [value]="data.email" /> <br/>
     <label for="">Password:</label> <br/>
-    <input [value]="data.password" /> <br/>
+    <input [value]="data.password" type="password" /> <br/>
 
-    <button (click)="event-handler() ">Login</button>
+    <button (click)="login() ">Login</button>
 
     <p>dont have an account?</p>
     <p><a routerLink="/company-signup" routerLinkActive="active">Signup as Company </a></p>
