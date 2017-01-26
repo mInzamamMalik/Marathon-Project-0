@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { AngularFireModule } from 'angularfire2';
 
 import { NgReduxModule } from 'ng2-redux';
 import { StoreModule } from './store'
+
+import { AngularFireModule } from 'angularfire2';
+import { FireService } from './providers/fire.service'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -78,7 +80,7 @@ export const firebaseConfig = {
         AngularFireModule.initializeApp(firebaseConfig)
 
     ],
-    providers: [],
+    providers: [FireService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
