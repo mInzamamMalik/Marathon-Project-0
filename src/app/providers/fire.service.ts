@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 import { PreloadingStrategy, Route, Router } from '@angular/router';
+import * as firebase from 'firebase';
 
 @Injectable()
 export class FireService {
@@ -39,5 +40,14 @@ export class FireService {
     }
     getData(path) {
         return this.af.database.object('/' + path);
+    }
+    pushData(path, data): firebase.Promise<void> {
+        return this.af.database.list('/' + path).push(data);
+    }
+    getDate() {
+        return firebase.database.ServerValue.TIMESTAMP;
+    }
+    getUser(){
+        return this.af.auth;
     }
 }
