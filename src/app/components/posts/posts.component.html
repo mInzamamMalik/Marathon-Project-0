@@ -2,8 +2,8 @@
 
 <div *ngFor="let item of posts | async | reverse " class="post">
 
-    <p>Email: {{item.email}}</p>
-    <p>Posted on: {{item.date | date:'yMMMdjms'}}</p>
-    <span>Detail: {{item.text}}</span>
+    <p><b>Company Email:</b> {{item.email}}</p>
+    <p><b>Posted on:</b> {{item.date | date:'yMMMdjms'}}</p>
+    <span><b>Details:</b> {{item.text}}</span>
 
 </div>
