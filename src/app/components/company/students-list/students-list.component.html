@@ -1,3 +1,7 @@
-<p>
-  students-list works!
-</p>
+<h3>Students:</h3>
+
+<div *ngFor="let item of students | async | reverse " class="student">
+
+    <p><b>Email</b>: {{item.email}}</p>
+    <p><b>Name</b>: {{item.name}}</p>
+</div>
