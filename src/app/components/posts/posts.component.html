@@ -1,3 +1,10 @@
-<p>
-  posts works!
-</p>
+<h3> Posts:</h3>
+<div>
+    <div *ngFor="let item of posts | async | reverse " style="background-color: lightgray;border: 2px solid black; margin: 4px">
+
+        <p>Email: {{item.email}}</p>
+        <p>Posted on: {{item.date | date}}</p>
+        <p>Detail: {{item.text}}</p>
+
+    </div>
+</div>
