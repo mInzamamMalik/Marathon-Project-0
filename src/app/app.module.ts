@@ -24,6 +24,8 @@ import { CompanySignupComponent } from './components/company/company-signup/comp
 import { CompanyDashboardComponent } from './components/company/company-dashboard/company-dashboard.component';
 
 import { ReversePipe } from './pipes/reverse';
+import { UserListComponent } from './components/admin/user-list/user-list.component';
+import { StudentsListComponent } from './components/company/students-list/students-list.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -70,7 +72,9 @@ export const firebaseConfig = {
         CompanySignupComponent,
         PostsComponent,
         ProfileComponent,
-        ReversePipe
+        ReversePipe,
+        UserListComponent,
+        StudentsListComponent
     ],
     imports: [
         BrowserModule,
