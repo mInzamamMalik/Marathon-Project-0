@@ -29,6 +29,7 @@ import { studentAndCompany } from './pipes/studentAndCompany-only';
 
 import { UserListComponent } from './components/admin/user-list/user-list.component';
 import { StudentsListComponent } from './components/company/students-list/students-list.component';
+import { ViewResumeComponent } from './components/view-resume/view-resume.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -79,7 +80,8 @@ export const firebaseConfig = {
         StudentsListComponent,
         ReversePipe,
         onlyStudents,
-        studentAndCompany
+        studentAndCompany,
+        ViewResumeComponent
     ],
     imports: [
         BrowserModule,
