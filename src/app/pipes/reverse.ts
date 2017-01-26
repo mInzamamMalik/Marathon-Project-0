@@ -9,7 +9,6 @@ export class ReversePipe implements PipeTransform {
         if (!value) {
             return;
         }
-        console.log(value);
         return value.slice().reverse();
     }
 }

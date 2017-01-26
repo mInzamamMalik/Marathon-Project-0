@@ -12,14 +12,7 @@ export class StudentsListComponent implements OnInit {
     students;
 
     ngOnInit() {
-        this.students = this.fs
-            .getList('users')
-            .filter((user => {
-                //don't add admin in list
-                if (user.role !== "admin") {
-                    return true;
-                }
-            }));
+        this.students = this.fs.getList('users')
     }
 
 }
