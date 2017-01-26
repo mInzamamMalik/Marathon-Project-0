@@ -53,7 +53,7 @@ const appRoutes: Routes = [
     //     redirectTo: '/heroes',
     //     pathMatch: 'full'
     // },
-    // { path: '**', component: LoginComponent }
+    { path: '**', component: LoginComponent }
 ];
 
 export const firebaseConfig = {
