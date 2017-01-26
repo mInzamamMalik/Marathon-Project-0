@@ -1,3 +1,25 @@
-<p>
-  profile works!
-</p>
+<p>Student Profile Page:</p>
+
+<div *ngFor="let item of resume | async" class="student">
+    <u>
+        <p class="heading"> {{item.heading}}: </p>
+    </u>
+    <p class="description" > {{item.description}} </p>
+    <a (click)="remove(item)" class="remove">remove</a>
+    <br>
+    <br>
+</div>
+
+<br>
+<br>
+
+<form action="" (submit)="add()">
+
+
+    <input (input)="data.heading=$event.target.value" placeholder="Heading" required=true>
+    <br>
+    <textarea minlength="50" (input)="data.description=$event.target.value" placeholder="Description" cols="30"  rows="3" required=true></textarea>
+    <br>
+    <button >Add</button>
+
+</form>

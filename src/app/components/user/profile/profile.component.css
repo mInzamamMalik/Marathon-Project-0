@@ -1,0 +1,17 @@
+.heading{
+    font-size: 22px;
+    text-transform: capitalize;     
+    display: inline;
+    word-wrap: break-word    ;
+    width: 400px;
+}
+.description{
+    text-transform: capitalize;
+    display: inline;
+    word-wrap: break-word ;
+    width: 400px;   
+}
+.remove{
+    font-size: 8px;
+    color: blue
+}
